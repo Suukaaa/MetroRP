@@ -10,6 +10,7 @@ public sealed class PlayerParam : Component
     [Property] public MadnessTable Madness { get; private set; } = new MadnessTable();
     [Property] public DiseaseTable Disease { get; private set; } = new DiseaseTable();
     [Property] public FearTable Fear { get; private set; } = new FearTable();
+    [Property] public MoneyTable Money { get; private set; } = new MoneyTable();
 }
 
 // -------- BASE TEMPLATE --------
@@ -32,3 +33,4 @@ public sealed class OxygenTable : StatTable { }
 public sealed class MadnessTable : StatTable { }
 public sealed class DiseaseTable : StatTable { }
 public sealed class FearTable : StatTable { }
+public sealed class MoneyTable : StatTable{ }
