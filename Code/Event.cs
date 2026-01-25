@@ -18,7 +18,6 @@ public sealed class Event : Component, PlayerController.IEvents
 		playerParam.SetHealth(0);
 	}
 
-	[Property] public PlayerInfo PlayerInfo {get; set;}
 
 	void PlayerController.IEvents.OnEyeAngles( ref Angles angles )
 	{
