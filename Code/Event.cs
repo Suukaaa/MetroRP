@@ -15,7 +15,7 @@ public sealed class Event : Component, PlayerController.IEvents
 	{
 		parent = GameObject.Parent;
 		playerParam = parent.Components.Get<PlayerParam>();
-		playerParam.Health.Set(0);
+		playerParam.Health.Set(100);
 	}
 
 
@@ -31,6 +31,6 @@ public sealed class Event : Component, PlayerController.IEvents
 	}
 	void PlayerController.IEvents.OnJumped()
 	{
-
+		
 	}
 }
