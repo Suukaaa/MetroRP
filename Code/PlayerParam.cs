@@ -2,37 +2,25 @@ using Sandbox;
 
 public sealed class PlayerParam : Component
 {
-	[Property] public HealthTable Health { get; private set; }
-	[Property] public ShieldTable Shield { get; private set; }
-	[Property] public StaminaTable Stamina { get; private set; }
-	[Property] public RadiationTable Radiation { get; private set; }
-	[Property] public OxygenTable Oxygen { get; private set; }
-	[Property] public MadnessTable Madness { get; private set; }
-	[Property] public DiseaseTable Disease { get; private set; }
-	[Property] public FearTable Fear { get; private set; }
-
-	protected override void OnAwake()
-	{
-		Health ??= new HealthTable();
-		Shield ??= new ShieldTable();
-		Stamina ??= new StaminaTable();
-		Radiation ??= new RadiationTable();
-		Oxygen ??= new OxygenTable();
-		Madness ??= new MadnessTable();
-		Disease ??= new DiseaseTable();
-		Fear ??= new FearTable();
-	}
+    [Property] public HealthTable Health { get; private set; } = new HealthTable();
+    [Property] public ShieldTable Shield { get; private set; } = new ShieldTable();
+    [Property] public StaminaTable Stamina { get; private set; } = new StaminaTable();
+    [Property] public RadiationTable Radiation { get; private set; } = new RadiationTable();
+    [Property] public OxygenTable Oxygen { get; private set; } = new OxygenTable();
+    [Property] public MadnessTable Madness { get; private set; } = new MadnessTable();
+    [Property] public DiseaseTable Disease { get; private set; } = new DiseaseTable();
+    [Property] public FearTable Fear { get; private set; } = new FearTable();
 }
 
 // -------- BASE TEMPLATE --------
 public abstract class StatTable
 {
-	[Property] protected int Value;
+    [Property] protected int Value;
 
-	public int Get() => Value;
-	public void Set(int v) => Value = v;
-	public void Increment(int v) => Value += v;
-	public void Decrement(int v) => Value -= v;
+    public int Get() => Value;
+    public void Set(int v) => Value = v;
+    public void Increment(int v) => Value += v;
+    public void Decrement(int v) => Value -= v;
 }
 
 // -------- STATS --------

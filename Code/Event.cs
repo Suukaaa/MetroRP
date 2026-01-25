@@ -31,6 +31,6 @@ public sealed class Event : Component, PlayerController.IEvents
 	}
 	void PlayerController.IEvents.OnJumped()
 	{
-		playerParam.Health.Increment(80);
+
 	}
 }
