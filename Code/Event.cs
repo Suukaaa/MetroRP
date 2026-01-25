@@ -1,3 +1,6 @@
+using System.Dynamic;
+using System.Net.Mail;
+using Microsoft.VisualBasic;
 using Sandbox;
 
 public sealed class Event : Component, PlayerController.IEvents
@@ -15,6 +18,8 @@ public sealed class Event : Component, PlayerController.IEvents
 		playerParam.SetHealth(0);
 	}
 
+	[Property] public PlayerInfo PlayerInfo {get; set;}
+
 	void PlayerController.IEvents.OnEyeAngles( ref Angles angles )
 	{
 		// laissez en commentaires ça s'execute en boucles
@@ -28,21 +33,5 @@ public sealed class Event : Component, PlayerController.IEvents
 	void PlayerController.IEvents.OnJumped()
 	{
 		playerParam.IncrementHealth(80);
-	}
-	void PlayerController.IEvents.OnLanded( float distance, Vector3 impactVelocity )
-	{
-		Log.Info("Land");
-	}
-	void PlayerController.IEvents.StartPressing( Component target )
-	{
-		Log.Info("StartPress");
-	}
-	void PlayerController.IEvents.StopPressing( Component target )
-	{
-		Log.Info("StopPress");
-	}
-	void PlayerController.IEvents.FailPressing()
-	{
-		Log.Info("FailPress");
 	}
 }
