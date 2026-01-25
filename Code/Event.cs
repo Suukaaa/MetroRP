@@ -8,11 +8,13 @@ public sealed class Event : Component, PlayerController.IEvents
 
 	void PlayerController.IEvents.OnEyeAngles( ref Angles angles )
 	{
-		Log.Info("Angles");
+		// laissez en commentaires ça s'execute en boucles
+		//Log.Info("Angles");
 	}
 	void PlayerController.IEvents.PostCameraSetup( CameraComponent cam )
 	{
-		Log.Info("PostCameraEvents");
+		// laissez en commentaires ça s'execute en boucles
+		//Log.Info("PostCameraEvents");
 	}
 	void PlayerController.IEvents.OnJumped()
 	{
