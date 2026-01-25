@@ -3,8 +3,17 @@ using Sandbox;
 public sealed class Event : Component, PlayerController.IEvents
 {
 
-	[Property]
-	public PlayerController MyController { get; set; }
+	[Property] public PlayerController MyController { get; set; }
+
+	private GameObject parent;
+	private PlayerParam playerParam;
+
+	protected override void OnStart()
+	{
+		parent = GameObject.Parent;
+		playerParam = parent.Components.Get<PlayerParam>();
+		playerParam.SetHealth(0);
+	}
 
 	void PlayerController.IEvents.OnEyeAngles( ref Angles angles )
 	{
@@ -18,7 +27,7 @@ public sealed class Event : Component, PlayerController.IEvents
 	}
 	void PlayerController.IEvents.OnJumped()
 	{
-		Log.Info("Jump");
+		playerParam.IncrementHealth(80);
 	}
 	void PlayerController.IEvents.OnLanded( float distance, Vector3 impactVelocity )
 	{
