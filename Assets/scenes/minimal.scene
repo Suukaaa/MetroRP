@@ -821,7 +821,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Source": "OwnerConnection",
+          "Source": "Manual",
           "WorkshopItems": []
         },
         {
@@ -835,6 +835,19 @@
             "go": "0fc96c25-d032-4510-bb91-7684b454733f",
             "component_type": "PlayerController"
           },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "PlayerInfo",
+          "__guid": "53416623-e5d4-4906-a6ec-10b71a71219f",
+          "__enabled": true,
+          "Flags": 0,
+          "Health": 100,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
