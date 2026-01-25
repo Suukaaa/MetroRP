@@ -2,33 +2,59 @@ using Sandbox;
 
 public sealed class PlayerParam : Component
 {
-    [Property] public HealthTable Health { get; private set; } = new HealthTable();
-    [Property] public ShieldTable Shield { get; private set; } = new ShieldTable();
-    [Property] public StaminaTable Stamina { get; private set; } = new StaminaTable();
-    [Property] public RadiationTable Radiation { get; private set; } = new RadiationTable();
-    [Property] public OxygenTable Oxygen { get; private set; } = new OxygenTable();
-    [Property] public MadnessTable Madness { get; private set; } = new MadnessTable();
-    [Property] public DiseaseTable Disease { get; private set; } = new DiseaseTable();
-    [Property] public FearTable Fear { get; private set; } = new FearTable();
+    // -------- HEALTH --------
+    [Property] private int Health;
+    public int GetHealth() => Health;
+    public void SetHealth(int value) => Health = value;
+    public void IncrementHealth(int value) => Health += value;
+    public void DecrementHealth(int value) => Health -= value;
+
+    // -------- SHIELD --------
+    [Property] private int Shield;
+    public int GetShield() => Shield;
+    public void SetShield(int value) => Shield = value;
+    public void IncrementShield(int value) => Shield += value;
+    public void DecrementShield(int value) => Shield -= value;
+
+    // -------- STAMINA --------
+    [Property] private int Stamina;
+    public int GetStamina() => Stamina;
+    public void SetStamina(int value) => Stamina = value;
+    public void IncrementStamina(int value) => Stamina += value;
+    public void DecrementStamina(int value) => Stamina -= value;
+
+    // -------- RADIATION --------
+    [Property] private int Radiation;
+    public int GetRadiation() => Radiation;
+    public void SetRadiation(int value) => Radiation = value;
+    public void IncrementRadiation(int value) => Radiation += value;
+    public void DecrementRadiation(int value) => Radiation -= value;
+
+    // -------- OXYGEN --------
+    [Property] private int Oxygen;
+    public int GetOxygen() => Oxygen;
+    public void SetOxygen(int value) => Oxygen = value;
+    public void IncrementOxygen(int value) => Oxygen += value;
+    public void DecrementOxygen(int value) => Oxygen -= value;
+
+    // -------- MADNESS --------
+    [Property] private int Madness;
+    public int GetMadness() => Madness;
+    public void SetMadness(int value) => Madness = value;
+    public void IncrementMadness(int value) => Madness += value;
+    public void DecrementMadness(int value) => Madness -= value;
+
+    // -------- DISEASE --------
+    [Property] private int Disease;
+    public int GetDisease() => Disease;
+    public void SetDisease(int value) => Disease = value;
+    public void IncrementDisease(int value) => Disease += value;
+    public void DecrementDisease(int value) => Disease -= value;
+
+    // -------- FEAR --------
+    [Property] private int Fear;
+    public int GetFear() => Fear;
+    public void SetFear(int value) => Fear = value;
+    public void IncrementFear(int value) => Fear += value;
+    public void DecrementFear(int value) => Fear -= value;
 }
-
-// -------- BASE TEMPLATE --------
-public abstract class StatTable
-{
-    [Property] protected int Value;
-
-    public int Get() => Value;
-    public void Set(int v) => Value = v;
-    public void Increment(int v) => Value += v;
-    public void Decrement(int v) => Value -= v;
-}
-
-// -------- STATS --------
-public sealed class HealthTable : StatTable { }
-public sealed class ShieldTable : StatTable { }
-public sealed class StaminaTable : StatTable { }
-public sealed class RadiationTable : StatTable { }
-public sealed class OxygenTable : StatTable { }
-public sealed class MadnessTable : StatTable { }
-public sealed class DiseaseTable : StatTable { }
-public sealed class FearTable : StatTable { }
