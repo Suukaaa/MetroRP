@@ -2,65 +2,69 @@ using Sandbox;
 
 public sealed class PlayerParam : Component
 {
+
+
+    public TimeSince TimeAlive { get; set; } =0f;
+
     // -------- HEALTH --------
-    [Property] private int Health;
-    public int GetHealth() => Health;
-    public void SetHealth(int value) => Health = value;
-    public void IncrementHealth(int value) => Health += value;
-    public void DecrementHealth(int value) => Health -= value;
+    [Property] private float Health ;
+    public float GetHealth() => Health;
+    public void SetHealth(float value) => Health = value;
+    public void IncrementHealth(float value) => Health += value;
+    public void DecrementHealth(float value) => Health -= value;
 
     // -------- SHIELD --------
-    [Property] private int Shield;
-    public int GetShield() => Shield;
-    public void SetShield(int value) => Shield = value;
-    public void IncrementShield(int value) => Shield += value;
-    public void DecrementShield(int value) => Shield -= value;
+    [Property] private float Shield;
+    public float GetShield() => Shield;
+    public void SetShield(float value) => Shield = value;
+    public void IncrementShield(float value) => Shield += value;
+    public void DecrementShield(float value) => Shield -= value;
 
     // -------- STAMINA --------
-    [Property] private int Stamina;
-    public int GetStamina() => Stamina;
-    public void SetStamina(int value) => Stamina = value;
-    public void IncrementStamina(int value) => Stamina += value;
-    public void DecrementStamina(int value) => Stamina -= value;
+    [Property] private float Stamina;
+    public float GetStamina() => Stamina;
+    public void SetStamina(float value) => Stamina = value;
+    public void IncrementStamina(float value) => Stamina += value;
+    public void DecrementStamina(float value) => Stamina -= value;
 
     // -------- RADIATION --------
-    [Property] private int Radiation;
-    public int GetRadiation() => Radiation;
-    public void SetRadiation(int value) => Radiation = value;
-    public void IncrementRadiation(int value) => Radiation += value;
-    public void DecrementRadiation(int value) => Radiation -= value;
+    [Property] private float Radiation;
+    public float GetRadiation() => Radiation;
+    public void SetRadiation(float value) => Radiation = value;
+    public void IncrementRadiation(float value) => Radiation += value;
+    public void DecrementRadiation(float value) => Radiation -= value;
 
     // -------- OXYGEN --------
-    [Property] private int Oxygen;
-    public int GetOxygen() => Oxygen;
-    public void SetOxygen(int value) => Oxygen = value;
-    public void IncrementOxygen(int value) => Oxygen += value;
-    public void DecrementOxygen(int value) => Oxygen -= value;
+    [Property] private float Oxygen;
+    public float GetOxygen() => Oxygen;
+    public void SetOxygen(float value) => Oxygen = value;
+    public void IncrementOxygen(float value) => Oxygen += value;
+    public void DecrementOxygen(float value) => Oxygen -= value;
 
     // -------- MADNESS --------
-    [Property] private int Madness;
-    public int GetMadness() => Madness;
-    public void SetMadness(int value) => Madness = value;
-    public void IncrementMadness(int value) => Madness += value;
-    public void DecrementMadness(int value) => Madness -= value;
+    [Property] private float Madness;
+    public float GetMadness() => Madness;
+    public void SetMadness(float value) => Madness = value;
+    public void IncrementMadness(float value) => Madness += value;
+    public void DecrementMadness(float value) => Madness -= value;
 
     // -------- DISEASE --------
-    [Property] private int Disease;
-    public int GetDisease() => Disease;
-    public void SetDisease(int value) => Disease = value;
-    public void IncrementDisease(int value) => Disease += value;
-    public void DecrementDisease(int value) => Disease -= value;
+    [Property] private float Disease;
+    public float GetDisease() => Disease;
+    public void SetDisease(float value) => Disease = value;
+    public void IncrementDisease(float value) => Disease += value;
+    public void DecrementDisease(float value) => Disease -= value;
 
     // -------- FEAR --------
-    [Property] private int Fear;
-    public int GetFear() => Fear;
-    public void SetFear(int value) => Fear = value;
-    public void IncrementFear(int value) => Fear += value;
-    public void DecrementFear(int value) => Fear -= value;
+    [Property] private float Fear;
+    public float GetFear() => Fear;
+    public void SetFear(float value) => Fear = value;
+    public void IncrementFear(float value) => Fear += value;
+    public void DecrementFear(float value) => Fear -= value;
 
     // -------- MONEY --------
     [Property] private int Money;
-    public int GetMoney() => Money;
+    public float GetMoney() => Money;
     public void SetMoney(int value) => Money = value;
     public void IncrementMoney(int value) => Money += value;
     public void DecrementMoney(int value) => Money -= value;
