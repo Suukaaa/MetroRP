@@ -57,4 +57,11 @@ public sealed class PlayerParam : Component
     public void SetFear(int value) => Fear = value;
     public void IncrementFear(int value) => Fear += value;
     public void DecrementFear(int value) => Fear -= value;
+
+    // -------- MONEY --------
+    [Property] private int Money;
+    public int GetMoney() => Money;
+    public void SetMoney(int value) => Money = value;
+    public void IncrementMoney(int value) => Money += value;
+    public void DecrementMoney(int value) => Money -= value;
 }

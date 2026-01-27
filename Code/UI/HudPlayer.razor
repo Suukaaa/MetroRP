@@ -5,7 +5,7 @@
 
 <root>
 	<div class=vitals>
-		<p>🪙 @Player.Money </p>
+		<p>🪙@Param.GetMoney()</p>
 		<p></p>
 		<p></p>
 		<p></p>
@@ -16,9 +16,9 @@
 @code
 {
 
-	[Property] PlayerController Player { get; set; }
+	[Property] PlayerParam Param { get; set; }
 	protected override int BuildHash()
 	{
-		return System.HashCode.Combine( "" );
+		return System.HashCode.Combine( Param.GetMoney() );
 	}
 }

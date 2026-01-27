@@ -13,7 +13,7 @@ public sealed class Event : Component, PlayerController.IEvents
 
 	protected override void OnStart()
 	{
-		parent = GameObject.Parent;
+		parent = GameObject;
 		playerParam = parent.Components.Get<PlayerParam>();
 		playerParam.SetHealth(100);
 	}
