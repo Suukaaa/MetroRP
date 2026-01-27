@@ -17,7 +17,7 @@ public sealed class Event : Component, PlayerController.IEvents
 	{
 		
 		playerParam = GameObject.Components.Get<PlayerParam>();
-		playerParam.SetHealth(100);
+		
 	}
 
 	protected override void OnUpdate()
@@ -28,12 +28,23 @@ public sealed class Event : Component, PlayerController.IEvents
 		if (Delay >= 300)
 		{
 			Delay = 0;
-			playerParam.IncrementMoney(50);
+			playerParam.Money += 50;
 		}
+
+		
 	}
 	void PlayerController.IEvents.OnJumped()
 	{
-
+		if (playerParam.MaxHealth-1 < playerParam.Health)
+		{
+			playerParam.Health = playerParam.MaxHealth;
+		}
+		else
+		{
+			playerParam.Health +=1;
+		}
+		
+		playerParam.Money +=20;
 	}
 
 

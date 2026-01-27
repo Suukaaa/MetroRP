@@ -831,8 +831,11 @@
           "Flags": 0,
           "Disease": 0,
           "Fear": 0,
-          "Health": 0,
+          "Health": 100,
           "Madness": 0,
+          "MaxHealth": 100,
+          "MaxShield": 100,
+          "MaxStamina": 100,
           "Money": 0,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -840,10 +843,28 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Oxygen": 0,
+          "Oxygen": 100,
           "Radiation": 0,
           "Shield": 0,
           "Stamina": 0
+        },
+        {
+          "__type": "Event",
+          "__guid": "976684f4-e771-42ac-97b5-e45e45f51156",
+          "__enabled": true,
+          "Flags": 0,
+          "MyController": {
+            "_type": "component",
+            "component_id": "4b66f490-e9a8-4b2a-9df8-1a28bf9d58f0",
+            "go": "0fc96c25-d032-4510-bb91-7684b454733f",
+            "component_type": "PlayerController"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
@@ -869,12 +890,12 @@
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
-              "BodyGroups": 682,
+              "BodyGroups": 681,
               "BoneMergeTarget": null,
               "CreateAttachments": false,
               "CreateBoneObjects": false,
               "LodOverride": null,
-              "MaterialGroup": "skin_light",
+              "MaterialGroup": "default",
               "MaterialOverride": null,
               "Materials": null,
               "Model": "models/citizen_human/citizen_human_male.vmdl",
@@ -1055,7 +1076,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PlayerParam": {
+          "playerParam": {
             "_type": "component",
             "component_id": "ee181b9a-d7e5-40bc-8ec4-344b15b5f17d",
             "go": "0fc96c25-d032-4510-bb91-7684b454733f",
