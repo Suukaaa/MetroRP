@@ -1,0 +1,24 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+    <div class=vitals>
+        <p>🪙 @PlayerParam.GetMoney()</p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+    </div>
+</root>
+
+@code
+{
+
+    [Property] PlayerParam PlayerParam { get; set; }
+    protected override int BuildHash()
+    {
+        return System.HashCode.Combine( PlayerParam.GetMoney() );
+    }
+}
