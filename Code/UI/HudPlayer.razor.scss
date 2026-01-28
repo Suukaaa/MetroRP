@@ -6,13 +6,13 @@ HudPlayer
 	right: 0;
 	bottom: 0;
 	font-family: Poppins;
-	font-size : 24px;
+	font-size : 0px;
 
 	> .vitals {
 		position : absolute;
 		bottom : 32px;
 		left : 32px;
-		font-size:64px;
+		font-size: 32px;
 		font-weight: bold;
 		font-style : 8px black stroke;
 		color : white;
