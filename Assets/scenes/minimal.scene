@@ -114,8 +114,8 @@
           "__version": 1,
           "BakedTexture": null,
           "Bounds": {
-            "Mins": "-512,-512,-512",
-            "Maxs": "512,512,512"
+            "Mins": "-1033.543,-1316.862,-512",
+            "Maxs": "2589.729,1299.698,512"
           },
           "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
@@ -148,7 +148,7 @@
       "Name": "Plane",
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "5,5,5",
+      "Scale": "15,15,2",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1105,8 +1105,7 @@
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
       "IncludedBodies": ""
-    },
-    "GameObjectSystems": []
+    }
   },
   "ResourceVersion": 3,
   "Title": "minimal",
