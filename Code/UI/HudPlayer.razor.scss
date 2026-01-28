@@ -10,12 +10,39 @@ HudPlayer
 
 	> .vitals {
 		position : absolute;
-		bottom : 32px;
+		top : 32px;
 		left : 32px;
 		font-size:64px;
 		font-weight: bold;
-		font-style : 8px black stroke;
+		text-stroke : 8px black;
 		color : white;
 		flex-direction: column;
+	}
+
+	> .healthbars
+	{
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+
+		> .healthbar
+		{
+			width: 500px;
+			height : 64px;
+			background-color : rgb(27, 27, 27);
+			padding : 8px;
+
+			> .inner
+			{
+				background-color: black;
+				flex-grow: 1;
+
+				> .fill 
+				{
+					height: 100%;
+					background-color: rgb(192, 0, 0);
+				}
+			}
+		}
 	}
 }

@@ -7,10 +7,18 @@
 <root>
     <div class=vitals>
         <p>🪙@playerParam.Money</p>
-        <p>@GetTimeString()</p>
-        <p> </p>
-        <p></p>
-	
+        <p>🕞@GetTimeString()</p>
+    </div> 
+    
+    <div class="healthbars">
+        <div class="healthbar">
+            <div class="inner">
+                <div class="fill"
+                    style="width: @(playerParam.Health / playerParam.MaxHealth * 100)%">
+                </div>
+            </div>
+        </div>
+
 
     </div>
 	

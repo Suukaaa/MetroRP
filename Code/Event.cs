@@ -24,7 +24,8 @@ public sealed class Event : Component, PlayerController.IEvents
 	{
 		// Le delay est en seconde, 300 secondes = 5 minutes.
 		Delay += Time.Delta;
-		Log.Info ("Delay =" + Delay);
+		// affiche le delay dans la console 
+		// Log.Info ("Delay =" + Delay);
 		if (Delay >= 300)
 		{
 			Delay = 0;
@@ -41,7 +42,7 @@ public sealed class Event : Component, PlayerController.IEvents
 		}
 		else
 		{
-			playerParam.Health +=1;
+			playerParam.Health +=10;
 		}
 		
 		playerParam.Money +=20;
