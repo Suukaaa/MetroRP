@@ -942,9 +942,9 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "Clothing": [],
-              "ManualAge": 0.8529438,
-              "ManualHeight": 0.4947344,
-              "ManualTint": 0.66124886,
+              "ManualAge": 0,
+              "ManualHeight": 1,
+              "ManualTint": 0,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -1082,6 +1082,18 @@
             "go": "0fc96c25-d032-4510-bb91-7684b454733f",
             "component_type": "PlayerParam"
           }
+        },
+        {
+          "__type": "Sandbox.Hotbar",
+          "__guid": "e82b01c4-a196-4f6e-a2ca-0ca3c6450825",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
@@ -1105,7 +1117,8 @@
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
       "IncludedBodies": ""
-    }
+    },
+    "GameObjectSystems": []
   },
   "ResourceVersion": 3,
   "Title": "minimal",

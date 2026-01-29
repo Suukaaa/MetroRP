@@ -6,12 +6,20 @@
 
 <root>
     <div class=vitals>
-        <p>@GetTimeString()</p>
         <p>🪙@playerParam.Money</p>
-        <p>@playerParam.Health</p>
-        <p>@playerParam.Shield</p>
-        <p>@playerParam.Stamina</p>
-        <p>@playerParam.Radiation</p>
+        <p>🕞@GetTimeString()</p>
+    </div> 
+    
+    <div class="healthbars">
+        <div class="healthbar">
+            <div class="inner">
+                <div class="fill"
+                    style="width: @(playerParam.Health / playerParam.MaxHealth * 100)%">
+                </div>
+            </div>
+        </div>
+
+
     </div>
 	
 </root>
