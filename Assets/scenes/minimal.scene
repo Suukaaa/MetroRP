@@ -908,12 +908,12 @@
               "__enabled": true,
               "Flags": 0,
               "AnimationGraph": null,
-              "BodyGroups": 682,
+              "BodyGroups": 681,
               "BoneMergeTarget": null,
               "CreateAttachments": false,
               "CreateBoneObjects": false,
               "LodOverride": null,
-              "MaterialGroup": "skin_light",
+              "MaterialGroup": "default",
               "MaterialOverride": null,
               "Materials": null,
               "Model": "models/citizen_human/citizen_human_male.vmdl",
@@ -1100,6 +1100,18 @@
             "go": "0fc96c25-d032-4510-bb91-7684b454733f",
             "component_type": "PlayerParam"
           }
+        },
+        {
+          "__type": "Sandbox.Hotbar",
+          "__guid": "e82b01c4-a196-4f6e-a2ca-0ca3c6450825",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
