@@ -1,0 +1,66 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root class="@(IsInteracting ? "interact" : "")" >
+		
+    <!-- ProgressBar s'affiche seulement si on interagit et hold > 0 -->
+    @if (IsHoldInteraction && ProgressionHold > 0.1 && ProgressionHold < 1)
+    {
+        <div class="ProgressBar" style="
+            width:@(MathX.Clamp(ProgressionHold, 0f, 1f) * 90 + 10)%;  
+            opacity: 1;
+        "></div>
+    }
+
+    <div class="Left"> 
+        <Image class="InteractionGlyph" Texture=@InputTexture/>
+        @if (IsHoldInteraction)
+        {
+            <div class="InteractionHold"> Hold </div>
+        }
+    </div>
+
+    <div class="Right"> 
+        <div class="InteractionTitle"> @InteractionString </div>
+    </div>
+
+</root>
+
+@code
+{
+    private Texture InputTexture;
+    public string InteractionString { get; set; }
+    private bool IsInteracting = false;
+    public bool IsHoldInteraction = false;
+    public float ProgressionHold = 0;
+
+    protected override int BuildHash() => System.HashCode.Combine(InputTexture, InteractionString, IsHoldInteraction, ProgressionHold);
+
+    protected override void OnUpdate()
+    {
+        InputTexture = Input.GetGlyph("use", InputGlyphSize.Medium, true);
+
+        // Si hold est terminé ou 0, on cache la progress bar
+        if (!IsHoldInteraction || ProgressionHold <= 0f || ProgressionHold >= 1f)
+        {
+            ProgressionHold = 0;
+        }
+    }
+
+    public async Task TriggerInteractAnimation()
+    {
+        if (IsInteracting)
+            return;
+
+        IsInteracting = true;
+        StateHasChanged();
+
+        await Task.Delay(100);
+
+        IsInteracting = false;
+        StateHasChanged();
+    }
+}
