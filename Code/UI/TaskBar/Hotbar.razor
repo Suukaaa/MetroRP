@@ -1,0 +1,76 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="taskbar @(IsHidden ? "hidden" : "")">
+		@for (int i = 0; i < SlotNumbers; i++)
+		{
+			var classes = "slot";
+
+			if (i == SelectedSlot)
+				classes += " selected";
+			else if (i == (SelectedSlot - 1 + SlotNumbers) % SlotNumbers || i == (SelectedSlot + 1) % SlotNumbers)
+				classes += " neighbor";
+
+			<div class="@classes"></div>
+		}
+	</div>
+</root>
+
+@code
+{
+	/////////////////////////////////////////////////////////////////////////////////
+	// [ POUR LA LOGIQUE DES INPUTS ] -> https://sbox.game/dev/doc/systems/input/ //
+	///////////////////////////////////////////////////////////////////////////////
+
+	public int SelectedSlot = 0;
+	private int SlotNumbers = 7;
+	private float inactivityTimer = 0f;
+	private const float inactivityLimit = 3f; // 3 secondes
+	private bool IsHidden = false;
+
+	protected override void OnUpdate()
+	{
+		bool inputDetected = false;
+
+		// MOLETTE SOURIS
+		float wheel = Input.MouseWheel.y;
+		if (wheel != 0)
+		{
+			SelectedSlot -= (int)wheel;
+			SelectedSlot = (SelectedSlot + SlotNumbers) % SlotNumbers;
+			inputDetected = true;
+		}
+
+		// TOUCHES 1 -> 9
+		for (int i = 0; i < SlotNumbers; i++)
+		{
+			if (Input.Pressed($"Slot{i + 1}"))
+			{
+				SelectedSlot = i;
+				inputDetected = true;
+			}
+		}
+
+		// TIMER D’INACTIVITÉ
+		if (inputDetected)
+		{
+			inactivityTimer = 0f;
+			IsHidden = false; // barre visible
+		}
+		else
+		{
+			inactivityTimer += Time.Delta;
+			if (inactivityTimer >= inactivityLimit)
+			{
+				IsHidden = true; // barre disparaît
+			}
+		}
+	}
+
+	protected override int BuildHash()
+    => System.HashCode.Combine(SelectedSlot, IsHidden);
+
+}

@@ -1,0 +1,41 @@
+.taskbar {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(0);
+    
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 10px;
+
+    display: flex;
+    gap: 10px;
+
+    transition: opacity 0.25s ease;
+}
+
+.taskbar.hidden {
+    opacity: 0;
+}
+
+.slot
+{
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.slot.selected
+{
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.slot.neighbor
+{
+	//pas obligatoire en vrai mais bon ça peux etre utile si vous voulez des effets sympa
+	background-color: rgba(0, 0, 0, 0.35);
+}
