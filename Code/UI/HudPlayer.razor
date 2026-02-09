@@ -1,0 +1,36 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Formats.Asn1
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+    <div class=vitals>
+        <p>🪙@playerParam.Money</p>
+        <p>@GetTimeString()</p>
+        <p> </p>
+        <p></p>
+	
+
+    </div>
+	
+</root>
+
+@code
+{
+
+    [Property] PlayerParam playerParam { get; set; }
+
+	// Fonction qui retourne
+	string GetTimeString()
+	{
+		var time = playerParam.TimeAlive;
+		var minutes = (int)time / 60;
+		var secondes=(int)time % 60;
+		return $"{minutes:00}:{secondes:00}";
+	}
+    protected override int BuildHash()
+    {
+        return System.HashCode.Combine( playerParam.Money, GetTimeString());
+    }
+}
